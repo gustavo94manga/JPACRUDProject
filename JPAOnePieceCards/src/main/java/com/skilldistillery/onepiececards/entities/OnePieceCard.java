@@ -15,10 +15,37 @@ public class OnePieceCard {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name="first_name")
 	private String name;
+	
 	private String description;
+	
 	@Column(name="image_Url")
 	private String imageUrl;
+	
+	@Column(name="card_type")
+	private String cardType;
+	
+	private String attribute;
+	
+	@Column(name="don_cost")
+	private Integer don;
+	
+	@Column(name="power_level")
+	private Integer powerLevel;
+	
+	private double price;
+	
+	private String set;
+	
+	@Column(name="last_name")
+	private String lastName;
+	
+	private String color;
+	
+	private String rarity;
+	
+
 	
 	public OnePieceCard() {}
 
@@ -62,11 +89,86 @@ public class OnePieceCard {
 		this.imageUrl = imageUrl;
 	}
 
+	public String getCardType() {
+		return cardType;
+	}
+
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
+
+	public String getAttribute() {
+		return attribute;
+	}
+
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
+	}
+
+	public Integer getDon() {
+		return don;
+	}
+
+	public void setDon(Integer don) {
+		this.don = don;
+	}
+
+	public Integer getPowerLevel() {
+		return powerLevel;
+	}
+
+	public void setPowerLevel(Integer powerLevel) {
+		this.powerLevel = powerLevel;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getSet() {
+		return set;
+	}
+
+	public void setSet(String set) {
+		this.set = set;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getRarity() {
+		return rarity;
+	}
+
+	public void setRarity(String rarity) {
+		this.rarity = rarity;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("OnePieceCard [id=").append(id).append(", name=").append(name).append(", description=")
-				.append(description).append(", imageUrl=").append(imageUrl).append("]");
+				.append(description).append(", imageUrl=").append(imageUrl).append(", cardType=").append(cardType)
+				.append(", attribute=").append(attribute).append(", don=").append(don).append(", powerLevel=")
+				.append(powerLevel).append(", price=").append(price).append(", set=").append(set).append(", lastName=")
+				.append(lastName).append(", color=").append(color).append(", rarity=").append(rarity).append("]");
 		return builder.toString();
 	}
 

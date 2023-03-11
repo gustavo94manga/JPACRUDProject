@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>One Piece Cards</title>
+<title>All Card Info</title>
 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link rel="stylesheet" href="css/main.css"> -->
@@ -18,31 +18,41 @@
 
 <div class="container-fluid">
 
-	<h1>One Piece Romance Dawn</h1>
-	
-	<form action="getCard.do" method="GET">
-		Card Number: <input type="number" name="opcId" /> 
-		<input class="btn btn-primary" type="submit" value="Show Card" />
-	</form>
-	<form action="getAllCards.do" method="GET">
-		<!-- Card Number: <input type="number" name="opcId" />  -->
-		<input class="btn btn-primary" type="submit" value="Show All Cards" />
-	</form>
-	
-	<c:choose>
-	<c:when test="${empty cards }">No One Piece Cards found.</c:when>
+<c:choose>
+	<c:when test="${empty displayAll }">No One Piece Cards found.</c:when>
 	<c:otherwise>
 	<table class="table table-striped table-hover">
 	
 	<tr>
 	<th>ID</th>
 	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Description</th>
+	<th>Card Type</th>
+	<th>Power Level</th>
+	<th>Attribute</th>
+	<th>Don Cost</th>
+	<th>Color</th>
+	<th>Price</th>
+	<th>Rarity</th>
+	<th>Set</th>
 	</tr>
 	
-	<c:forEach var="opcards" items="${cards }">
+	<c:forEach var="opcards" items="${displayAll }">
 	<tr>
 	<td>${opcards.id }</td>
 	<td>${opcards.name}</td>
+	<td>${opcards.lastName }</td>
+	<td>${opcardsption }</td>
+	<td>${opcards.cardType }</td>
+	<td>${opcards.powerLevel }</td>
+	<td>${opcards.attribute }</td>
+	<td>${opcards.don }</td>
+	<td>${opcards.color }</td>
+	<td>${opcards.price }</td>
+	<td>${opcards.rarity }</td>
+	<td>${opcards.set }</td>
+	
 	</tr>
 
 	</c:forEach>
@@ -51,6 +61,7 @@
 	</c:otherwise>
 	</c:choose>
 	
+
 </div>
 
 </body>
