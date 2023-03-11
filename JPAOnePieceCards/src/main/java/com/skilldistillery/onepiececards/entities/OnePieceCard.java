@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="one_piece_card")
-public class OnePieceCards {
+public class OnePieceCard {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,9 @@ public class OnePieceCards {
 	@Column(name="image_Url")
 	private String imageUrl;
 	
-	public OnePieceCards() {}
+	public OnePieceCard() {}
 
-	public OnePieceCards(int id, String name, String description, String imageUrl) {
+	public OnePieceCard(int id, String name, String description, String imageUrl) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -65,7 +65,7 @@ public class OnePieceCards {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("OnePieceCards [id=").append(id).append(", name=").append(name).append(", description=")
+		builder.append("OnePieceCard [id=").append(id).append(", name=").append(name).append(", description=")
 				.append(description).append(", imageUrl=").append(imageUrl).append("]");
 		return builder.toString();
 	}
