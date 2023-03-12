@@ -36,8 +36,17 @@ public class OnePieceCard {
 	
 	private double price;
 	
-	private String set;
+	@Column(name="card_box")
+	private String cardBox;
 	
+	public String getCardBox() {
+		return cardBox;
+	}
+
+	public void setCardBox(String cardBox) {
+		this.cardBox = cardBox;
+	}
+
 	@Column(name="last_name")
 	private String lastName;
 	
@@ -129,14 +138,6 @@ public class OnePieceCard {
 		this.price = price;
 	}
 
-	public String getSet() {
-		return set;
-	}
-
-	public void setSet(String set) {
-		this.set = set;
-	}
-
 	public String getLastName() {
 		return lastName;
 	}
@@ -163,13 +164,11 @@ public class OnePieceCard {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("OnePieceCard [id=").append(id).append(", name=").append(name).append(", description=")
-				.append(description).append(", imageUrl=").append(imageUrl).append(", cardType=").append(cardType)
-				.append(", attribute=").append(attribute).append(", don=").append(don).append(", powerLevel=")
-				.append(powerLevel).append(", price=").append(price).append(", set=").append(set).append(", lastName=")
-				.append(lastName).append(", color=").append(color).append(", rarity=").append(rarity).append("]");
-		return builder.toString();
+		return "OnePieceCard [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
+				+ ", cardType=" + cardType + ", attribute=" + attribute + ", don=" + don + ", powerLevel=" + powerLevel
+				+ ", price=" + price + ", cardBox=" + cardBox + ", lastName=" + lastName + ", color=" + color
+				+ ", rarity=" + rarity + "]";
 	}
 
+	
 }

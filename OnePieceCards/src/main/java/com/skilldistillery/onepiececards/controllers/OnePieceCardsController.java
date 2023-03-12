@@ -46,10 +46,10 @@ public class OnePieceCardsController {
 	}
 	
 	@RequestMapping(path="updatedCard.do", method=RequestMethod.POST)
-	public String updateCard(Integer cardId, Model model, OnePieceCard opc) {
-		OnePieceCard card = opcDao.updateCard(cardId, opc);
-		
-		model.addAttribute(card);
+	public String updateCard(Integer id, Model model, OnePieceCard opc) {
+//		System.err.println("*************** " + id);
+		OnePieceCard card = opcDao.updateCard(id, opc);
+		model.addAttribute("updateWith", card);
 		return "updatedcard";
 		
 	}
@@ -62,8 +62,8 @@ public class OnePieceCardsController {
 	}
 	@RequestMapping(path="createdCard.do")
 	public String createdCard(Model model, OnePieceCard opc) {
-
-		model.addAttribute("createWith", opc);
+		OnePieceCard newCard = opcDao.createCard(opc);
+		model.addAttribute("createWith", newCard);
 		return "createdcard";
 	}
 	
@@ -72,19 +72,16 @@ public class OnePieceCardsController {
 //		model.addAttribute("deleteWith", cardId);
 		return "deletecard";
 	}
-	@RequestMapping(path="deletedCard.do", method=RequestMethod.POST)
-	public String deleteCardById( Model model, OnePieceCard opc) {
-		OnePieceCard card = opcDao.findById(opc.getId());
-		boolean deleted = opcDao.deleteCardById(opc.getId());
-		if(deleted) {
-			model.addAttribute("deleteWith",deleted);
-		} else {
-			
+	@RequestMapping(path="deletedCard.do",method = RequestMethod.POST)
+	public String deleteRecipe(Model model,OnePieceCard card) {
+		OnePieceCard opc = opcDao.findById(card.getId());
+		boolean deleted = opcDao.deleteCardById(card.getId());
+		if (deleted) {
+			model.addAttribute("deleteWith",opc.getName()  + " Card Deleted.");
+		}else {
+			model.addAttribute("deleteWith","Could Not Delete the Card: "+ opc.getName());
+	
 		}
-		model.addAttribute("deleteWith", deleted);
-		
 		return "deletedcard";
 	}
-	
-	
 }

@@ -6,7 +6,7 @@
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 	<!--  begin entities  -->
-	<class>com.skilldistillery.onepiececards.entities.Actor</class>
+	<class>com.skilldistillery.onepiececards.entities.OnePieceCard</class>
 	
 	
 	<!--  end entities  -->

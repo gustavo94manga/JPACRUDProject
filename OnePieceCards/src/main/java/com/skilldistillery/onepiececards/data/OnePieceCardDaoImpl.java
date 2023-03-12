@@ -36,8 +36,7 @@ public class OnePieceCardDaoImpl implements OnePieceCardDAO {
 	
 	@Override
 	public OnePieceCard createCard(OnePieceCard opc) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAOnePieceCards");
-		em = emf.createEntityManager();
+		
 		
 		OnePieceCard card = new OnePieceCard();
 		
@@ -49,7 +48,7 @@ public class OnePieceCardDaoImpl implements OnePieceCardDAO {
 		card.setDon(opc.getDon());
 		card.setPowerLevel(opc.getPowerLevel());
 		card.setPrice(opc.getPrice());
-		card.setSet(opc.getSet());
+		card.setCardBox(opc.getCardBox());
 		card.setColor(opc.getColor());
 		card.setRarity(opc.getRarity());
 		em.persist(card);
@@ -58,7 +57,7 @@ public class OnePieceCardDaoImpl implements OnePieceCardDAO {
 	@Override
 	public OnePieceCard updateCard(Integer cardId, OnePieceCard opc) {
 		OnePieceCard updatedOPC = em.find(OnePieceCard.class, cardId);
-//		if(opc != null) {
+
 		
 		updatedOPC.setName(opc.getName());
 		updatedOPC.setLastName(opc.getLastName());
@@ -70,9 +69,8 @@ public class OnePieceCardDaoImpl implements OnePieceCardDAO {
 		updatedOPC.setColor(opc.getColor());
 		updatedOPC.setPrice(opc.getPrice());
 		updatedOPC.setRarity(opc.getRarity());
-		updatedOPC.setSet(opc.getSet());
-//		em.persist(updatedOPC);
-//		}
+		updatedOPC.setCardBox(opc.getCardBox());
+
 		return updatedOPC;
 	}
 

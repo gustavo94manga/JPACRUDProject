@@ -51,7 +51,7 @@
 	<td>${opcards.color }</td>
 	<td>${opcards.price }</td>
 	<td>${opcards.rarity }</td>
-	<td>${opcards.set }</td>
+	<td>${opcards.cardBox }</td>
 	
 	</tr>
 

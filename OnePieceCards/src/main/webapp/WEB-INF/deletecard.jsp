@@ -19,9 +19,11 @@
 <div>
 	
 			
-	<form action="deletedCard.do" method="POST">
-		Card Number: <input type="number" name="deleteWith" /> 
-		<input class="btn btn-primary" type="submit" value="Delete Card" />
+<form action="deletedCard.do" method="POST">
+		<label for="delete">Delete a Card:</label> <input
+			type="text" id="delete" name="id"
+			placeholder="Enter a Card Number"> <input type="submit"
+			value="Delete">
 	</form>
 	
 	</div>

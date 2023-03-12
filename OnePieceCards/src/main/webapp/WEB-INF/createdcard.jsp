@@ -29,6 +29,7 @@
   <p>${createWith.color}</p>
   <p>${createWith.price}</p>
   <p>${createWith.rarity}</p>
+  <p>${createWith.cardBox}</p>
   </c:otherwise>
   </c:choose>
 </div>

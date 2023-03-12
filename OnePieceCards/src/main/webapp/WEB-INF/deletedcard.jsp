@@ -26,7 +26,7 @@
   <blockquote>${deleteWith.description}</blockquote>
   </c:otherwise>
   </c:choose>
-</div> --%> --%>
+</div> --%> 
 ${deleteWith }
 
 	

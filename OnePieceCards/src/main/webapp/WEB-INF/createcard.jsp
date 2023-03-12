@@ -16,7 +16,7 @@
 
 		<form action="createdCard.do" method="POST">
 		
-		Card Number:<input type="number" name="id" /> <br>
+		
 		First Name: <input type="text" name="name" /> <br> 
 		Last Name: <input type="text" name="lastName" /> <br> 
 		<label for="description">Description:</label><br>
@@ -55,7 +55,7 @@
       <label for="Secret">Secret</label>
     </div>
 </fieldset>
-		Set: <input type="text" name="set" /> <br> 
+		Set: <input type="text" name="cardBox" /> <br> 
 
 <input class="btn btn-primary" type="submit" value="Create Card" />
 	</form>
