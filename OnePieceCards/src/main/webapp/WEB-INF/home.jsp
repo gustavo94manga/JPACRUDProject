@@ -19,15 +19,15 @@
 <div class="container-fluid">
 
 	<h1>One Piece Romance Dawn</h1>
-	
+	<a target="_blank" href="https://i.pinimg.com/736x/ca/26/9e/ca269ede910c4e29d862b6fab704c305.jpg"><img src="https://i.pinimg.com/736x/ca/26/9e/ca269ede910c4e29d862b6fab704c305.jpg" alt="One Piece Card Game Logo." /></a><br>
 	<form action="getCard.do" method="GET">
 		Card Number: <input type="number" name="opcId" /> 
 		<input class="btn btn-primary" type="submit" value="Show Card" />
 	</form>
-	<form action="getAllCards.do" method="GET">
-		<!-- Card Number: <input type="number" name="opcId" />  -->
+	<!-- <form action="getAllCards.do" method="GET">
+		Card Number: <input type="number" name="opcId" /> 
 		<input class="btn btn-primary" type="submit" value="Show All Cards" />
-	</form>
+	</form> -->
 	
 	<c:choose>
 	<c:when test="${empty cards }">No One Piece Cards found.</c:when>

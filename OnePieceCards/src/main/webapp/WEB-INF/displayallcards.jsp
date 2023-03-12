@@ -43,7 +43,7 @@
 	<td>${opcards.id }</td>
 	<td>${opcards.name}</td>
 	<td>${opcards.lastName }</td>
-	<td>${opcardsption }</td>
+	<td>${opcards.description }</td>
 	<td>${opcards.cardType }</td>
 	<td>${opcards.powerLevel }</td>
 	<td>${opcards.attribute }</td>

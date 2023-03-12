@@ -12,6 +12,19 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="home.do">Home</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="getAllCards.do">Display All Cards</a>
+        </li>
+        <li class="nav-item">
+      
+        <a class="nav-link active" aria-current="page" href="updateCard.do"> Update a Card</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="deleteCard.do">Delete a Card</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="createCard.do">Create a Card</a>
+        </li>
 
       </ul>
 

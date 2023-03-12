@@ -3,6 +3,8 @@ package com.skilldistillery.onepiececards.data;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -33,20 +35,58 @@ public class OnePieceCardDaoImpl implements OnePieceCardDAO {
 //	NO em.close();
 	
 	@Override
-	public OnePieceCard create(OnePieceCard opc) {
-		// TODO Auto-generated method stub
-		return null;
+	public OnePieceCard createCard(OnePieceCard opc) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAOnePieceCards");
+		em = emf.createEntityManager();
+		
+		OnePieceCard card = new OnePieceCard();
+		
+		card.setName(opc.getName());
+		card.setLastName(opc.getLastName());
+		card.setDescription(opc.getDescription());
+		card.setCardType(opc.getCardType());
+		card.setAttribute(opc.getAttribute());
+		card.setDon(opc.getDon());
+		card.setPowerLevel(opc.getPowerLevel());
+		card.setPrice(opc.getPrice());
+		card.setSet(opc.getSet());
+		card.setColor(opc.getColor());
+		card.setRarity(opc.getRarity());
+		em.persist(card);
+		return card;
 	}
 	@Override
-	public OnePieceCard update(int cardId) {
-		// TODO Auto-generated method stub
-		return null;
+	public OnePieceCard updateCard(Integer cardId, OnePieceCard opc) {
+		OnePieceCard updatedOPC = em.find(OnePieceCard.class, cardId);
+//		if(opc != null) {
+		
+		updatedOPC.setName(opc.getName());
+		updatedOPC.setLastName(opc.getLastName());
+		updatedOPC.setDescription(opc.getDescription());
+		updatedOPC.setCardType(opc.getCardType());
+		updatedOPC.setPowerLevel(opc.getPowerLevel());
+		updatedOPC.setAttribute(opc.getAttribute());
+		updatedOPC.setDon(opc.getDon());
+		updatedOPC.setColor(opc.getColor());
+		updatedOPC.setPrice(opc.getPrice());
+		updatedOPC.setRarity(opc.getRarity());
+		updatedOPC.setSet(opc.getSet());
+//		em.persist(updatedOPC);
+//		}
+		return updatedOPC;
 	}
 
 	@Override
-	public boolean deleteById(int cardId) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteCardById(int cardId) {
+		boolean deleted = false;
+		
+		OnePieceCard card = em.find(OnePieceCard.class, cardId);
+		if(card != null) {
+			em.remove(card);
+			deleted = true;
+		}
+		
+		return deleted;
 	}
 
 }
