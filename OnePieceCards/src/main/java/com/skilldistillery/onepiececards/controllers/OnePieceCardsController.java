@@ -69,7 +69,6 @@ public class OnePieceCardsController {
 	
 	@RequestMapping(path="deleteCard.do")
 	public String deleteCardPage(Integer cardId, Model model) {
-//		model.addAttribute("deleteWith", cardId);
 		return "deletecard";
 	}
 	@RequestMapping(path="deletedCard.do",method = RequestMethod.POST)

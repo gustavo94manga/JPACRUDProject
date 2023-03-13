@@ -43,7 +43,25 @@ class OnePieceCardTest {
 	@Test
 	void test_OnePieceCards_entity_mapping() {
 		assertNotNull(opc);
-		assertEquals("Luffy", opc.getName());
+		assertEquals("Zoro", opc.getName());
+		assertEquals("Roronoa", opc.getLastName());
+		assertEquals("Leader", opc.getCardType());
 	}
+//	@Test
+//	void test_OnePieceCards_Entity_mapping() {
+//		assertNotNull(opc);
+//		assertEquals("Trafalgar", opc.getName());
+//		assertEquals("Law", opc.getLastName());
+//		assertNull(opc.getDon());
+//		assertEquals("Leader", opc.getCardType());
+//	}
+//	@Test
+//	void test_OnePieceCards_Entity_Mapping() {
+//		assertNotNull(opc);
+//		assertEquals("Zoro", opc.getName());
+//		assertNull(opc.getLastName());
+//		assertNull(opc.getDon());
+//		assertEquals("Leader", opc.getCardType());
+//	}
 
 }

@@ -19,9 +19,13 @@
 <c:choose>
 <c:when test="${empty display }">No One Piece Cards found.</c:when>
 <c:otherwise>
-  <h5>${display.id } ${display.name} (${display.cardType})</h5>
-  <p>${display.powerLevel }</p>
-  <p>${display.attribute }</p>
+  <h5>Card Number: ${display.id } </h5>
+  <p>First Name: ${display.name} </p>
+  <p>Price: $${display.price }</p>
+  <p>Card Type: ${display.cardType}</p>
+  <p>Power Level: ${display.powerLevel }</p>
+  <p>Attribute: ${display.attribute }</p>
+  <p>Description: </p>
   <blockquote>${display.description}</blockquote>
   </c:otherwise>
   </c:choose>

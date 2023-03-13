@@ -49,7 +49,7 @@
 	<td>${opcards.attribute }</td>
 	<td>${opcards.don }</td>
 	<td>${opcards.color }</td>
-	<td>${opcards.price }</td>
+	<td>$${opcards.price }</td>
 	<td>${opcards.rarity }</td>
 	<td>${opcards.cardBox }</td>
 	
